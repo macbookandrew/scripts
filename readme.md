@@ -10,6 +10,10 @@ A collection of useful scripts/short snippets.
 
 - `du -ch --max-depth 2 / | sort -hr` Recursively list all folders by size descending—good for finding directories using a lot of space.
 
+##Find Version Number in All Files
+- `find /home/ -name revslider.php -exec grep -H 'Version:' \{} \;` Search through entire subdirectory of `/home` for the version number of RevSlider and show filename/path.
+
+
 ##Mount a “mounted-over” mount point
 
 - `mkdir /old-root`
