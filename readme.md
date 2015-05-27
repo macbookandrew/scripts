@@ -32,3 +32,9 @@ A collection of useful scripts/short snippets.
 ##Enable/Disable FTP Server (OS X Yosemite)
 1. `sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist` Enable the built-in FTP server
 2. `sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist` Disable the built-in FTP server
+
+##Flush DNS Cache
+- OS X 10.10 (Yosemite): `sudo discoveryutil udnsflushcaches`
+- OS X 10.9 (Mavericks): `dscacheutil -flushcache; sudo killall -HUP mDNSResponder`
+- OS X 10.7–10.8 (Lion–Mountain Lion): `sudo killall -HUP mDNSResponder`
+- OS X 10.5–10.6 (Leopard–Snow Leopard): `sudo dscacheutil -flushcache`
