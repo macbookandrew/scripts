@@ -11,7 +11,9 @@ A collection of useful scripts/short snippets.
 - `du -ch --max-depth 2 / | sort -hr` Recursively list all folders by size descending—good for finding directories using a lot of space.
 
 ##Find Version Number in All Files
-- `find /home/ -name revslider.php -exec grep -H 'Version:' \{} \;` Search through entire subdirectory of `/home` for the version number of RevSlider and show filename/path.
+- `find /home/ -name plugin.php -exec grep -H 'Version:' \{} \;` Search through entire subdirectory of `/home` for the version number of a plugin’s PHP file and show filename/path.
+- `find /home/ -name plugin.php -exec grep -H 'Version:' \{} \; | grep -v 'Version: 2.0.0'` Search through entire subdirectory of `/home` all copies not matching version 2.0.0.
+- Related: one-step command to update a plugin from a local folder: `cd ./  && sudo rm -r ./wp-content/plugins/plugin-folder && cp -r ~/public_html/plugin-folder ./wp-content/plugins/ && chown -R user:group ./wp-content/plugins/plugin-folder` (edit the intial `cd ./`, `plugin-folder`, and `user:group` to match as needed)
 
 
 ##Mount a “mounted-over” mount point
