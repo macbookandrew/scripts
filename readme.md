@@ -6,6 +6,10 @@ A collection of useful scripts/short snippets.
 
 #Linux
 
+## Copy folder/file structure
+- `find src/ -type d -exec mkdir -p dest/{} \; \ -o -type f -exec touch dest/{} \;`
+	- Find directory (`-d`) under (`src/`) and create (`mkdir -p`) them under `dest/` or (`-o`) find files (`-f`) and `touch` them under `dest/`.
+
 ##Disk Usage
 
 - `du -ch --max-depth 2 / | sort -hr` Recursively list all folders by size descending—good for finding directories using a lot of space.
