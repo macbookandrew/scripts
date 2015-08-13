@@ -36,7 +36,8 @@ A collection of useful scripts/short snippets.
 
 ##SSL Certificates
 1. `openssl req -new -newkey rsa:4096 -nodes -sha256 -out keyname.csr -keyout keyname.key -subj "/C=US/ST=State Name/L=City Name/O=Organizational Unit/CN=site url or FQDN"` Create new CSR (4096 bytes) with prefilled information.
-2. Cipher suite generator: [http://mozilla.github.io/server-side-tls/ssl-config-generator/](http://mozilla.github.io/server-side-tls/ssl-config-generator/)
+1. `openssl x509 -req -days 3650 -in keyname.csr -signkey keyname.key -out keyname.crt` Self-sign a CSR for 10 years
+1. Cipher suite generator: [http://mozilla.github.io/server-side-tls/ssl-config-generator/](http://mozilla.github.io/server-side-tls/ssl-config-generator/)
 
 
 -----
