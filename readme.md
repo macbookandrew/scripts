@@ -37,6 +37,7 @@ A collection of useful scripts/short snippets.
 ##SSL Certificates
 1. `openssl req -new -newkey rsa:4096 -nodes -sha256 -out keyname.csr -keyout keyname.key -subj "/C=US/ST=State Name/L=City Name/O=Organizational Unit/CN=site url or FQDN"` Create new CSR (4096 bytes) with prefilled information.
 1. `openssl x509 -req -days 3650 -in keyname.csr -signkey keyname.key -out keyname.crt` Self-sign a CSR for 10 years
+1. `openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt` Convert to PFX for use on IIS servers
 1. Cipher suite generator: [http://mozilla.github.io/server-side-tls/ssl-config-generator/](http://mozilla.github.io/server-side-tls/ssl-config-generator/)
 
 
@@ -47,6 +48,9 @@ A collection of useful scripts/short snippets.
 ##Enable/Disable FTP Server (OS X Yosemite)
 1. `sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist` Enable the built-in FTP server
 2. `sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist` Disable the built-in FTP server
+
+##Set symlink permissions
+- `chmod -h <symlink-name>`
 
 ##Flush DNS Cache
 - OS X 10.10.4+ (Yosemite): `dscacheutil -flushcache; sudo killall -HUP mDNSResponder`
