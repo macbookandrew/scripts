@@ -17,7 +17,7 @@ A collection of useful scripts/short snippets.
 ##Find Version Number in All Files
 - `find /home/ -name plugin.php -exec grep -H 'Version:' \{} \;` Search through entire subdirectory of `/home` for the version number of a plugin’s PHP file and show filename/path.
 - `find /home/ -name plugin.php -exec grep -H 'Version:' \{} \; | grep -v 'Version: 2.0.0'` Search through entire subdirectory of `/home` all copies not matching version 2.0.0.
-- Related: one-step command to update a plugin from a local folder: `cd ./  && sudo rm -r ./wp-content/plugins/plugin-folder && cp -r ~/public_html/plugin-folder ./wp-content/plugins/ && chown -R user:group ./wp-content/plugins/plugin-folder` (edit the intial `cd ./`, `plugin-folder`, and `user:group` to match as needed)
+- Related: one-step command to update a plugin from a local folder: `cd ./ && rm -rf ./wp-content/plugins/plugin-folder && cp -r ~/public_html/plugin-folder ./wp-content/plugins/ && chown -R user:group ./wp-content/plugins/plugin-folder` (edit the intial `cd ./`, `plugin-folder`, and `user:group` to match as needed)
 
 ##Firewall: block a specific port to everybody except localhost
 - `/sbin/iptables -I INPUT -p tcp --destination-port 2079 -j DROP && /sbin/iptables -I INPUT -s 127.0.0.1 -p tcp --destination-port 2079 -j ACCEPT && service iptables save`
