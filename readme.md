@@ -30,6 +30,12 @@ A collection of useful scripts/short snippets.
 - `mount --bind / /old-root`
 - More info: [SuperUser.com thread](http://superuser.com/a/200697)
 
+
+##Set file/folder permissions
+- `find ./ -type d -exec chmod 755 {} \; -type f -exec chmod 644 {} \;`
+    - Set files to `644` and folders to `755`
+
+
 ##String Modification
 - `sed "s/$/,new-field/" input.csv > output.csv` Add a field to the end of each row in a CSV file
 
