@@ -30,6 +30,10 @@ A collection of useful scripts/short snippets.
 - `mount --bind / /old-root`
 - More info: [SuperUser.com thread](http://superuser.com/a/200697)
 
+##Reverse SSH
+- On destination server: `ssh -fN -R 7000:localhost:22 user@intermediate-server`
+- On local server: `ssh user@intermediat-server` and then `ssh user@localhost -p 7000`
+
 
 ##Set file/folder permissions
 - `find ./ -type d -exec chmod 755 {} \; -type f -exec chmod 644 {} \;`
