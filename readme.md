@@ -39,12 +39,15 @@ A collection of useful scripts/short snippets.
 - `find ./ -type d -exec chmod 755 {} \; -type f -exec chmod 644 {} \;`
     - Set files to `644` and folders to `755`
 
+##Show file used by process
+- Run `top` and then press `c`
+
 
 ##String Modification
 - `sed "s/$/,new-field/" input.csv > output.csv` Add a field to the end of each row in a CSV file
 
 
-##SSL Certificates
+##TLS Certificates
 1. `openssl req -new -newkey rsa:4096 -nodes -sha256 -out keyname.csr -keyout keyname.key -subj "/C=US/ST=State Name/L=City Name/O=Organizational Unit/CN=site url or FQDN"` Create new CSR (4096 bytes) with prefilled information.
 1. `openssl x509 -req -days 3650 -in keyname.csr -signkey keyname.key -out keyname.crt` Self-sign a CSR for 10 years
 1. `openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt` Convert to PFX for use on IIS servers
