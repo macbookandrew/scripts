@@ -8,7 +8,7 @@ A collection of useful scripts/short snippets.
 
 ## Copy folder/file structure
 - `find src/ -type d -exec mkdir -p dest/{} \; \ -o -type f -exec touch dest/{} \;`
-	- Find directory (`-d`) under (`src/`) and create (`mkdir -p`) them under `dest/` or (`-o`) find files (`-f`) and `touch` them under `dest/`.
+	- Find directory (`-d`) under (`src/`) and create (`mkdir -p`) them under `dest/` or (`-o`) find files (`f`) and `touch` them under `dest/`.
 
 ##Disk Usage
 
@@ -24,6 +24,11 @@ A collection of useful scripts/short snippets.
     - Change port number as necessary
     - Originally used on CentOS 6; not tested on other distros
 
+##Get still frame(s) from movie
+- `ffmpeg -ss 0.5 -i inputfile.mp4 -t 1 still.jpg`
+	- `-ss`: time of frame(s) to get
+	- `-t`: number of frames to get
+
 ##Mount a “mounted-over” mount point
 
 - `mkdir /old-root`
@@ -36,7 +41,7 @@ A collection of useful scripts/short snippets.
 
 
 ##Set file/folder permissions
-- `find ./ -type d -exec chmod 755 {} \; -type f -exec chmod 644 {} \;`
+- `find . -type d -exec chmod 755 {} \; -type f -exec chmod 644 {} \;`
     - Set files to `644` and folders to `755`
 
 ##Show file used by process
